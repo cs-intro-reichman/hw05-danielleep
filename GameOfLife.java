@@ -86,6 +86,7 @@ public class GameOfLife
 		int[][] board = new int[rows + 2][cols + 2];
 		int counter=0;
 		while(!in.isEmpty())
+			// #feedback - please note the indentation here
         {
             String x = in.readLine();
             counter++;
@@ -93,6 +94,7 @@ public class GameOfLife
             {
                 for (int i = 0 ; i < x.length() ; i++)
                 {
+			// #feedback - you can check only the 'x', since the board already contain zeros (they are the default value for an integer array).
                     if (x.charAt(i) == '.')
                     {
                         board[counter][i+1]=0;
@@ -145,6 +147,7 @@ public class GameOfLife
 			{
 				return 1;
 			}
+			// #feedback - this if is not needed - you already check it in the first if. Also note that if count is 3 you return 1 (and not 0).
 			else if (count>=3)
 			{
 				return 0;
@@ -168,6 +171,7 @@ public class GameOfLife
 		{
 			for(int t=-1;t<=1;t++)
 			{
+				// #feedback - empty if can be removed. Instead, you can check that the current cell is not (0, 0).
 				if (k==0 && t==0)
 				{}
 				else count+=board[i+k][j+t];
